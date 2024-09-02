@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repository Info</title>
+
+    <link rel="stylesheet" href="../static/styles/repoinfo_body.css">
+    <link rel="stylesheet" href="../static/styles/repoinfo_header.css">
+    <script src="../static/scripts/repo_info.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div><i class="fa-brands fa-github-alt fa-beat-fade"></i></div>
+        <h2>GitHub Trends Data API</h2>
+    </header>
+
+    <section>
+        <article>
+            <div id="div_title">
+                <h1>Repository: MySampleRepo</h1>
+            </div>
+            
+            <div class="repo_description">
+                <h2>Description:</h2><br>
+                <p>This repository contains sample projects and documentation to demonstrate GitHub features.</p>
+            </div>
+            
+            <div class="Readme">
+                <h2>Readme Preview</h2>
+                <div id="readme-content">
+                    <pre>
+# MySampleRepo
+
+Welcome to MySampleRepo, a demonstration of GitHub's features.
+
+## Table of Contents
+- Overview
+- Setup Instructions
+- Usage
+- Contribution Guidelines
+- License Information
+
+## Overview
+This project is a simple example to showcase how you can manage a GitHub repository, including issues, pull requests, and contributions.
+
+## Setup Instructions
+1. Clone the repository.
+2. Navigate to the project directory.
+3. Follow the setup guide provided in the documentation.
+
+## Contribution Guidelines
+We welcome contributions from the community. Please submit issues or pull requests for any changes you'd like to propose.
+
+## License Information
+This project is licensed under the MIT License.
+                    </pre>
+                </div>
+                <button id="toggle-readme-button" onclick="toggleReadme()">Show More</button>
+            </div>
+            
+            <ul class="Issues">
+                <h2>Issues</h2>
+                <li>Issue: Improve documentation [Status: open] [Labels: documentation, enhancement]</li>
+                <li>Issue: Fix broken link in README [Status: closed] [Labels: bug]</li>
+                <li>Issue: Add unit tests [Status: open] [Labels: testing]</li>
+                <li>Issue: Refactor codebase [Status: open] [Labels: refactor]</li>
+                <li>Issue: Update dependencies [Status: closed] [Labels: maintenance]</li>
+            </ul>
+
+            <ul class="Pull">
+                <h2>Pull Requests</h2>
+                <li>+ PR: Update README with new sections [Status: open] [Author: john_doe]</li>
+                <li>+ PR: Add unit tests for core modules [Status: open] [Author: jane_smith]</li>
+                <li>+ PR: Improve error handling [Status: closed] [Author: john_doe]</li>
+                <li>+ PR: Optimize performance of functions [Status: open] [Author: jane_smith]</li>
+                <li>+ PR: Remove deprecated API usage [Status: closed] [Author: john_doe]</li>
+            </ul>
+
+            <ul class="Contributors">
+                <h2>Contributors</h2>
+                <li>+ john_doe: [Commits: 150]</li>
+                <li>+ jane_smith: [Commits: 120]</li>
+                <li id="more-contributors" style="display:none;">
+                    + alice_jones: [Commits: 80]<br>
+                    + bob_brown: [Commits: 60]<br>
+                    + charlie_adams: [Commits: 40]<br>
+                </li>
+                <button id="toggle-contributors-button" onclick="toggleContributors()">Show More</button>
+            </ul>
+
+            <div class="repo_button">
+                <button onclick="window.location.href='https://github.com/sampleuser/MySampleRepo.git'">Clone</button>
+                <button onclick="window.location.href='https://github.com/sampleuser/MySampleRepo/archive/refs/heads/main.zip'">Download ZIP</button>
+                <button><a href="https://github.com/sampleuser/MySampleRepo" target="_blank">Open in GitHub</a></button>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

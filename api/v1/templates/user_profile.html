@@ -1,0 +1,80 @@
+<!-- user_profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/userprofile_body.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/userprofile_header.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='imgs/favicon.svg') }}" type="image/svg+xml">
+    <script src="{{ url_for('static', filename='scripts/user_profile.js') }}"></script>
+</head>
+<body>
+    <header>
+        <div><i class="fa-brands fa-github-alt fa-beat-fade"></i></div>
+        <h2>GitHub Trends Data API</h2>
+    </header>
+    <section>
+        <article>
+            <div id="div_title"><h1>User Profile</h1></div>
+            <div class="basic_info">
+                <div class="description">{{ user.description }}</div>
+                <div class="profile_img" style="background-image: url('{{ user.avatar_url }}');"></div>
+                <div class="follow_num">
+                    Following: {{ user.following }} <br>
+                    Followers: {{ user.followers }}
+                </div>
+            </div>
+            <div class="list_info">
+                <div class="repo_section">
+                    <h3>Repositories</h3>
+                    <ul class="repo_list">
+                        {% for repo in repos %}
+                        <li>
+                            <a href="http://127.0.0.1:2000/gitlougui/{{ githubUsername }}/{{ repo.name }}" class="repo_name">{{ repo.name }}</a>: {{ repo.description }}<br>
+                            <span class="stars">Stars</span>: {{ repo.stars }}⭐ <span class="forks">Forks</span>: {{ repo.forks }} 🍴
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <button id="repoToggle">Show More</button>
+                </div>
+                <div class="followers_section">
+                    <h3>Followers</h3>
+                    <ul class="follower_list">
+                        {% for follower in followers %}
+                        <li>{{ follower }}</li>
+                        {% endfor %}
+                    </ul>
+                    <button id="followerToggle">Show More</button>
+                </div>
+                <div class="following_section">
+                    <h3>Following</h3>
+                    <ul class="following_list">
+                        {% for following in following_list %}
+                        <li>{{ following }}</li>
+                        {% endfor %}
+                    </ul>
+                    <button id="followingToggle">Show More</button>
+                </div>
+                <div class="activity_section">
+                    <h3>Recent Activity</h3>
+                    <ul class="activity_list">
+                        {% for activity in recent_activities %}
+                        <li>{{ activity }}</li>
+                        {% endfor %}
+                    </ul>
+                    <button id="activityToggle">Show More</button>
+                </div>
+                <div class="contact_info">
+                    [Contact Info: {{ user.email }}, <a href="{{ user.html_url }}">GitHub Link</a>]
+                </div>
+            </div>
+        </article>
+    </section>
+</body>
+</html>
+
+
+

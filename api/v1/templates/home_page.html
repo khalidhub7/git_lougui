@@ -1,0 +1,48 @@
+<!-- home_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Trends</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/homepage_body.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/homepage_header.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='imgs/favicon.svg') }}" type="image/svg+xml">
+    <script src="{{ url_for('static', filename='scripts/home_page.js') }}"></script>
+</head>
+<body>
+    <header>
+        <div><i class="fa-brands fa-github-alt fa-beat-fade"></i></div>
+        <h2>GitHub Trends Data API</h2>
+    </header>
+    <section>
+        <article>
+            <div id="div_title"><h1>Welcome to GitHub API Explorer</h1></div>
+            <div class="search">
+                <input type="text" placeholder="Search for repositories, users, or issues">
+                <button>Search</button>
+            </div>
+            <ul>
+                <h3>Popular Repositories</h3>
+                {% for repo in repos %}
+                <li>
+                    <span class="repo-name">{{ repo.name }}</span>: {{ repo.description }}<br>
+                    <span class="stars">Stars:</span> {{ repo.stars }}⭐
+                    <span class="forks">Forks:</span> {{ repo.forks }}🍴
+                    <span class="language">Lang:</span> {{ repo.language }}🗣️
+                </li>
+                {% endfor %}
+            </ul>
+            <ul>
+                <h3>Trending Developers</h3>
+                {% for developer in developers %}
+                <li>{{ developer.name }}</li>
+                {% endfor %}
+            </ul>
+        </article>
+    </section>
+</body>
+</html>
+
+

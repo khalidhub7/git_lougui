@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repository Info</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/repoinfo_body.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/repoinfo_header.css') }}">
+    <script src="{{ url_for('static', filename='scripts/repo_info.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div><i class="fa-brands fa-github-alt fa-beat-fade"></i></div>
+        <h2>GitHub Trends Data API</h2>
+    </header>
+
+    <section>
+        <article>
+            <div id="div_title">
+                <h1>Repository: {{ repo_info.name }}</h1>
+            </div>
+            
+            <div class="repo_description">
+                <h2>Description:</h2><br>
+                <p>{{ repo_info.description }}</p>
+            </div>
+            
+            <div class="Readme">
+                <h2>Readme Preview</h2>
+                <div id="readme-content">
+                    {{ repo_info.readme|safe }}
+                </div>
+                <button id="toggle-readme-button" onclick="toggleReadme()">Show More</button>
+            </div>
+
+            <!-- Issues Section -->
+            <div class="Issues">
+                <h2>Issues</h2>
+                {% if repo_info.issues %}
+                <ul>
+                    {% for issue in repo_info.issues %}
+                    <li>
+                        Issue: {{ issue.title }} [Status: {{ issue.status }}] [Labels: {{ issue.labels|join(', ') }}]
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No Issues available.</p>
+                {% endif %}
+            </div>
+
+            <!-- Pull Requests Section -->
+            <div class="Pull">
+                <h2>Pull Requests</h2>
+                {% if repo_info.pulls %}
+                <ul>
+                    {% for pull in repo_info.pulls %}
+                    <li>
+                        + PR: {{ pull.title }} [Status: {{ pull.status }}] [Author: {{ pull.author }}]
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No Pull Requests available.</p>
+                {% endif %}
+            </div>
+
+            <!-- Contributors Section -->
+            <div class="Contributors">
+                <h2>Contributors</h2>
+                {% if repo_info.contributors %}
+                <ul>
+                    {% for contributor in repo_info.contributors %}
+                    <li>
+                        + {{ contributor.login }}: [Commits: {{ contributor.commits }}]
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No Contributors available.</p>
+                {% endif %}
+            </div>
+
+            <!-- Repository Actions -->
+            <div class="repo_button">
+                <button onclick="window.location.href='{{ repo_info.clone_url }}'">Clone</button>
+                <button onclick="window.location.href='{{ repo_info.zip_url }}'">Download ZIP</button>
+                <button><a href="https://github.com/{{ repo_info.user.name }}/{{ repo_info.name }}" target="_blank">Open in GitHub</a></button>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

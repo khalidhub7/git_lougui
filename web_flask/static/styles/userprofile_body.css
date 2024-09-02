@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url(../imgs/wallhaven-dpxowm_3840x2160.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+
+section {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section article {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    width: 700px;
+    height: fit-content;
+    background-color: transparent;
+    border: 0.1px solid white;
+    border-radius: 7px;
+}
+
+section article #div_title {
+    width: 100%;
+    height: 40px;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px;
+
+    transform: scaleX(1.3); 
+}
+
+.basic_info {
+    width: 100%;
+    height: fit-content;
+    min-height: 250px;
+
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.description {
+    min-height: 220px;
+    height: fit-content;
+    width: 400px;
+    color: white;
+    padding: 30px;
+    padding-top: 80px;
+    padding-left: 60px;
+    font-family: "Brush Script MT", cursive;
+}
+
+.profile_img {
+    height: 140px;
+    width: 140px;
+    border-radius: 45%;
+    float: right;
+    margin-right: 40px;
+    margin-top: -240px;
+    background-size: cover;
+    background-position: center;
+}
+.follow_num {
+    color: white;
+    width: 180px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    float: right;
+    margin-top: -80px;
+    margin-right: 20px;
+    font-family: "Brush Script MT", cursive;
+}
+
+.repo_section h3, .followers_section h3,
+.following_section h3, .activity_section h3 {
+    color: rgb(174, 174, 24);
+    margin-left: 30px;
+    font-size: 25px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+
+.repo_list li, .follower_list li, .following_list li, .activity_list li {
+    color: white;
+    margin-left: 30px;
+    list-style-type: square;
+    font-family: "Lucida Console", Monaco, monospace;
+    line-height: 40px;
+}
+
+
+ul li {
+    list-style-type: none;
+}
+
+ul li:nth-child(n+4) {
+    display: none;
+}
+
+
+
+.repo_section button, .followers_section button,
+.following_section button, .activity_section button {
+    cursor: pointer;
+    margin-left: 80%;
+    background-color: transparent;
+    color: white;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+
+}
+.repo_section button:hover, .followers_section button:hover,
+.following_section button:hover, .activity_section button:hover {
+    opacity: 60%;
+    background-color: aliceblue;
+    color: black;
+}
+
+.repo_list .stars,.repo_list .forks {
+    color: darkgrey;
+}
+
+.repo_list .repo_name {
+    color: rgb(21, 213, 213);
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Trends</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/styles/userprofile_body.css">
+    <link rel="stylesheet" href="../static/styles/userprofile_header.css">
+    <script src="../static/scripts/user_profile.js"></script>
+</head>
+<body>
+    <header>
+        <div><i class="fa-brands fa-github-alt fa-beat-fade"></i></div>
+        <h2>GitHub Trends Data API</h2>
+    </header>
+
+    <section>
+        <article>
+            <div id="div_title"><h1>User Profile</h1></div>
+            <div class="basic_info">
+                <div class="description">Passionate open-source contributor and full-stack developer.</div>
+                <div class="profile_img" style="background-image: url('https://avatars.githubusercontent.com/u/123456?v=4');"></div>
+                <div class="follow_num">
+                    Following: 100 <br>
+                    Followers: 500
+                </div>
+            </div>
+            <div class="list_info">
+
+                <!-- Repositories Section -->
+                <div class="repo_section">
+                    <h3>Repositories</h3>
+                    <ul class="repo_list">
+                        <li><span class="repo_name">AwesomeProject</span>: A project to showcase GitHub features<br> 
+                            <span class="stars">Stars</span>: 150⭐ <span class="forks">Forks</span>: 50 🍴</li>
+                        <li><span class="repo_name">SuperApp</span>: An app to manage your tasks efficiently<br> 
+                            <span class="stars">Stars</span>: 200⭐ <span class="forks">Forks</span>: 75 🍴</li>
+                        <li><span class="repo_name">DevTools</span>: Tools for developers<br> 
+                            <span class="stars">Stars</span>: 120⭐ <span class="forks">Forks</span>: 60 🍴</li>
+                        <li><span class="repo_name">DataCrunch</span>: A library for data processing<br> 
+                            <span class="stars">Stars</span>: 300⭐ <span class="forks">Forks</span>: 120 🍴</li>
+                        <li><span class="repo_name">WebStarter</span>: A starter kit for web development<br> 
+                            <span class="stars">Stars</span>: 180⭐ <span class="forks">Forks</span>: 85 🍴</li>
+                    </ul>
+                    <button id="repoToggle">Show More</button>
+                </div>
+
+                <!-- Followers Section -->
+                <div class="followers_section">
+                    <h3>Followers</h3>
+                    <ul class="follower_list">
+                        <li>JaneDoe</li>
+                        <li>JohnSmith</li>
+                        <li>AliceJohnson</li>
+                        <li>BobBrown</li>
+                        <li>CharlieMiller</li>
+                    </ul>
+                    <button id="followerToggle">Show More</button>
+                </div>
+
+                <!-- Following Section -->
+                <div class="following_section">
+                    <h3>Following</h3>
+                    <ul class="following_list">
+                        <li>DavidClark</li>
+                        <li>EvaWhite</li>
+                        <li>FrankGreen</li>
+                        <li>GraceHall</li>
+                        <li>HankDavis</li>
+                    </ul>
+                    <button id="followingToggle">Show More</button>
+                </div>
+
+                <!-- Recent Activity Section -->
+                <div class="activity_section">
+                    <h3>Recent Activity</h3>
+                    <ul class="activity_list">
+                        <li>Starred the repository "MachineLearning101"</li>
+                        <li>Forked the repository "WebFramework"</li>
+                        <li>Opened an issue in "BugTracker"</li>
+                        <li>Merged a pull request in "DevOpsTools"</li>
+                        <li>Commented on an issue in "DatabaseMigration"</li>
+                    </ul>
+                    <button id="activityToggle">Show More</button>
+                </div>
+
+                <div class="contact_info">
+                    [Contact Info: user@example.com, <a href="https://github.com/sampleuser">GitHub Link</a>]
+                </div>
+
+            </div>
+        </article>
+    </section>
+</body>
+</html>

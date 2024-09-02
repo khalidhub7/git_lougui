@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    min-height: 100%;
+    /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='3840' height='2160' preserveAspectRatio='none' viewBox='0 0 3840 2160'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1010%26quot%3b)' fill='none'%3e%3crect width='3840' height='2160' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M -2474.072913005657%2c841 C -2218.07%2c916.6 -1706.07%2c1293.2 -1194.072913005657%2c1219 C -682.07%2c1144.8 -426.07%2c486.8 85.92708699434297%2c470 C 597.93%2c453.2 853.93%2c1067 1365.927086994343%2c1135 C 1877.93%2c1203 2151.11%2c688.2 2645.927086994343%2c810 C 3140.74%2c931.8 3601.19%2c1557.2 3840%2c1744' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -523.541190456998%2c1838 C -267.54%2c1630.2 244.46%2c870.6 756.458809543002%2c799 C 1268.46%2c727.4 1524.46%2c1524.8 2036.458809543002%2c1480 C 2548.46%2c1435.2 2804.46%2c654 3316.4588095430017%2c575 C 3828.46%2c496 4491.75%2c1041.4 4596.458809543002%2c1085 C 4701.17%2c1128.6 3991.29%2c851.4 3840%2c793' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -1224.8409079061043%2c945 C -968.84%2c1130.4 -456.84%2c1872.8 55.159092093895765%2c1872 C 567.16%2c1871.2 823.16%2c1086.2 1335.1590920938957%2c941 C 1847.16%2c795.8 2103.16%2c1217 2615.1590920938957%2c1146 C 3127.16%2c1075 3650.19%2c527.2 3895.1590920938957%2c586 C 4140.13%2c644.8 3851.03%2c1269.2 3840%2c1440' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -2166.4342697759084%2c1184 C -1910.43%2c1066 -1398.43%2c526 -886.4342697759084%2c594 C -374.43%2c662 -118.43%2c1471.8 393.56573022409157%2c1524 C 905.57%2c1576.2 1161.57%2c823.2 1673.5657302240916%2c855 C 2185.57%2c886.8 2520.28%2c1781 2953.5657302240916%2c1683 C 3386.85%2c1585 3662.71%2c628.6 3840%2c365' stroke='rgba(51%2c 121%2c 194%2c 0.58)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1010'%3e%3crect width='3840' height='2160' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e"); */
+    background-image: url(../imgs/wallhaven-dpxowm_3840x2160.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 80px;
+}
+
+section {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section article {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    width: 700px;
+    height: fit-content;
+    background-color: transparent;
+    border: 0.1px solid white;
+    border-radius: 7px;
+}
+
+section article #div_title {
+    width: 100%;
+    height: 40px;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px;
+
+    transform: scaleX(1.3); 
+}
+
+.search {
+    width: 600px;
+    height: 60px;
+    border-radius: 20px;
+    border: 1px solid white;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    height: 40px;
+    width: 90px;
+    background-color: transparent;
+    margin-right: 20px;
+    letter-spacing: 1px;
+
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    font-weight: 900;
+
+    position: relative;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    opacity: 60%;
+    background-color: aliceblue;
+    color: black;
+}
+
+.search input {
+    width: 400px;
+    height: 30px;
+    background-color: transparent;
+    color: whitesmoke;
+    font-size: 18px;
+}
+
+article ul {
+    color: white;
+    list-style: none;
+    margin-top: 70px;
+    font-size: 20px;
+}
+
+article ul li::before {
+    content: "+";
+    margin-right: 20px;
+    color: white;
+}
+
+article ul li {
+    line-height: 40px;
+    font-size: 17px;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+article ul h3 {
+    color: rgb(212, 203, 23);
+    font-style: oblique;
+
+}
+
+
+
+.repo-name {
+    color: rgb(48, 160, 160);
+}
+.language, .stars, .forks {
+    color: darkgrey;
+    margin-left: 70px;
+}
