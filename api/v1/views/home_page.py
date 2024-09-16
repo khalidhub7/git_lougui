@@ -5,6 +5,10 @@ import requests
 from api.v1.views import app_views
 cache = {}  # Global cache for storing the data
 
+@app_views.route("/", methods=["GET"])
+def landing():
+    return render_template("landing.html")
+
 @app_views.route("/homepage", methods=["GET"])
 def fetch_github_trending():
     if "trending_data" in cache:

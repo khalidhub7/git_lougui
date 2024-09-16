@@ -1,0 +1,55 @@
+<!-- home_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Trends</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/landing_body.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/landing_header.css') }}">
+    <script src="{{ url_for('static', filename='scripts/landing.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='imgs/favicon.svg') }}" type="image/svg+xml">
+</head>
+<body>
+    <header>
+        <div><i class="fa-brands fa-github-alt fa-beat-fade"></i></div>
+        <h2>GitHub Trends Data API</h2>
+        <div class="buttons">
+            <button><a href="#b">gitlougui</a></button>
+            <button><a href="#a">features</a></button>
+            <button><a href="#c">About me</a></button>
+        </div>
+    </header>
+    <section class="first">
+        <div class="description">
+            <h3>"GitHub Trends Data API" provides real-time insights into GitHub profile trends. Use it to showcase your GitHub activity and key projects to clients or companies, highlighting your contributions, popular repositories, and developer impact with detailed, up-to-date analytics.</h3>
+        </div>
+        <button class="start-button">Get Started</button>
+    </section>
+    <h2 class="features-title" id="a">features</h2>
+    <section class="second">
+        <div>
+            Explore the latest trending repositories and developers on GitHub. Use the search function to fetch and view details of GitHub users by their username.
+        </div>
+        <div>
+            Access detailed GitHub user profiles, including their followers, following list, repositories, forks, and stars ...
+        </div>
+        <div>
+            View a comprehensive overview of GitHub repositories, including the README.md file, contributors, recent activity, and more.
+        </div>
+    </section>
+    <h2 class="features-title" id="b">main idea of gitlougui</h2>
+    <div class="idea">
+        Our project reimagines the GitHub profile experience, offering a sleek and user-friendly interface to present individual or enterprise profiles. Ideal for showcasing your GitHub presence or professional achievements in a polished, engaging manner
+    </div>
+    <h2 class="features-title" id="c">About me</h2>
+    <div class="about">
+        Team Members: <br>
+        Developer Name: Khalid Lougui <br>
+        <a href="https://github.com/khalidhub7">GitHub Profile</a><br>
+        <a href="https://github.com/khalidhub7/git_lougui">Project Repository</a><br>
+        <a href="">LinkedIn</a>
+    </div>
+</body>
+</html>

@@ -4,17 +4,18 @@ import cachetools
 from markdown2 import markdown
 from api.v1.views import app_views
 
+# TTL cache to store repository info with a 5-minute time-to-live
 cache = cachetools.TTLCache(maxsize=100, ttl=300)
 
 @app_views.route("/<username>/<repo_name>", methods=["GET"])
 def repo_info(username, repo_name):
     cache_key = f"{username}/{repo_name}"
     
-    if cache_key in cache:
+    if cache_key in cache:  # Check cache first
         repo_info = cache[cache_key]
     else:
         repo_info = fetch_repo_info(username, repo_name)
-        if not repo_info:
+        if not repo_info:  # Return 404 if repo not found
             abort(404, description="Repository not found")
         cache[cache_key] = repo_info
 
@@ -28,16 +29,19 @@ def fetch_repo_info(username, repo_name):
     
     try:
         repo_data = requests.get(base_url).json()
-        if "message" in repo_data:
+        if "message" in repo_data:  # Return None if repo not found
             return None
         
+        # Fetch additional repository info
         issues_data = requests.get(f"{base_url}/issues").json()
         pulls_data = requests.get(f"{base_url}/pulls").json()
         contributors_data = requests.get(f"{base_url}/contributors").json()
         readme_data = requests.get(f"{base_url}/readme", headers=headers).text
 
+        # Convert README markdown to HTML
         readme_html = markdown(readme_data) if readme_data else "<p>No README available.</p>"
 
+        # Prepare repository info
         repo_info = {
             'name': repo_data.get('name', 'Unknown Repo'),
             'description': repo_data.get('description', 'No description'),
@@ -50,7 +54,7 @@ def fetch_repo_info(username, repo_name):
             'zip_url': repo_data.get('zipball_url', '')
         }
         
-    except requests.RequestException as e:
+    except requests.RequestException as e:  # Handle request exceptions
         print(f"Error fetching repository data: {e}")
         return None
     

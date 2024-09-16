@@ -1,0 +1,140 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url("../imgs/wallhaven-dpxowm_3840x2160.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 80px;
+} */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    background-image: url(../imgs/wallhaven-dpxowm_3840x2160.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.first {
+    min-height: 650px;
+    width: calc(100% - 2px);
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: start;
+
+    background-image: url(../imgs/4.jpg);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.description {
+    height: 100px;
+    width: 600px;
+    line-height: 40px;
+    color: rgb(194, 220, 204);
+    margin-top: 100px;
+    margin-left: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.start-button {
+    color: white;
+    background-color: transparent;
+    border: 5px solid yellow;
+    width: 120px;
+    height: 50px;
+    border-radius: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 500px;
+    margin-left: -70px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.start-button:hover {
+    background-color: grey;
+    color: black;
+}
+
+
+.second {
+    width: calc(100% - 2px);
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+}
+.features-title {
+    color: antiquewhite;
+    margin-left: 50px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    letter-spacing: 2px;
+}
+.second div {
+    background-color: rgb(43, 36, 36);
+    height: 200px;
+    width: 300px;
+    color: white;
+    font-size: larger;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    padding: 30px;
+    line-height: 30px;
+    border-radius: 4px;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid gray;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.second div:hover {
+    background-color: rgb(102, 102, 88);
+    color: black;
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.idea {
+    color: beige;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 20px;
+    padding: 0% 90px;
+    margin-bottom: 100px;
+}
+.about {
+    color: rgb(182, 182, 158);
+    font-size: 20px;
+    padding-top: 50px;
+    padding-left: 300px;
+    margin-bottom: 50px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+.about a {
+    color: rgb(54, 123, 120);
+}
+
+.buttons {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+.buttons button {
+    height: 40px;
+    width: 150px;
+    border-radius: 30%;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 15px;
+    border: 1px solid rgb(72, 62, 62);
+    background-color: transparent;
+    color: aliceblue;
+}
+
+.buttons button a{
+    color: aliceblue;
+}
+.buttons button:hover {
+    background-color: rgb(102, 102, 88);
+    color: black;
+}

@@ -4,23 +4,25 @@ import requests
 from flask import jsonify, render_template
 from api.v1.views import app_views
 
+# Cache to store user stats
 cache = {}
 
 @app_views.route("/<username>/stats", methods=["GET"])
 def fetch_more_github_stats(username):
-    if username in cache:
+    if username in cache:  # Check cache first
         return cache[username]
     
     base_url = f"https://api.github.com/users/{username}"
-    
+
+    # Fetch user data and related information
     with requests.Session() as session:
         user_req = session.get(base_url)
         repos_req = session.get(f"{base_url}/repos")
         followers_req = session.get(f"{base_url}/followers")
         following_req = session.get(f"{base_url}/following")
         events_req = session.get(f"{base_url}/events")
-    
-    if user_req.status_code == 200:
+
+    if user_req.status_code == 200:  # If user data is found
         user_data = user_req.json()
         repos_data = repos_req.json() if repos_req.status_code == 200 else []
         followers_data = [follower['login'] for follower in followers_req.json()] if followers_req.status_code == 200 else []
@@ -29,7 +31,8 @@ def fetch_more_github_stats(username):
             f"{event['type']} at {event['repo']['name']}" 
             for event in events_req.json()[:10]
         ] if events_req.status_code == 200 else []
-        
+
+        # Prepare repository details
         repos = [{
             "name": repo["name"],
             "description": repo["description"],
@@ -37,6 +40,7 @@ def fetch_more_github_stats(username):
             "forks": repo["forks_count"]
         } for repo in repos_data]
         
+        # Render profile template with all data
         rendered_template = render_template(
             "user_profile.html",
             user={
@@ -54,7 +58,7 @@ def fetch_more_github_stats(username):
             recent_activities=recent_activities
         )
         
-        cache[username] = rendered_template
+        cache[username] = rendered_template  # Store in cache
         return rendered_template
     else:
-        return jsonify({"error": "User not found"}), 404
+        return jsonify({"error": "User not found"}), 404  # Return error if user is not found
