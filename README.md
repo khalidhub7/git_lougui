@@ -15,8 +15,11 @@ While the final blog is still in progress, here is an overview of the project:
 - **Learnings**: Enhanced skills in full-stack development, API integration, and managing data handling asynchronously.
 
 ## Author
-**Khalid Lougui**  
+**Khalid Lougui**
 LinkedIn: *Coming soon*
+
+![GitHub Trends Data API](./imgs/311de8769125beab9c2634f0aebd1c0c.png)
+![GitHub Trends Data API](./imgs/e4c6bcb8330f219b6f1d858bf46de027.png)
 
 ## Installation
 To run this project locally, follow these steps:
@@ -29,4 +32,3 @@ sudo apt install python3-pip
 pip3 install cachetools
 pip3 install markdown2
 pip3 install flask gunicorn
-
